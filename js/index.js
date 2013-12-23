@@ -1,4 +1,5 @@
-(function(win, doc) {
+TacoRainGenerator = (function(win, doc) {
+
     function div_gen() {
         var d = doc.createElement('div');
         d.setAttribute('class', 'terker');
@@ -6,29 +7,40 @@
         return d;
     }
 
-    function anim_settings(div) {
-        var cb_1 = Math.random()*0.9 + 0.1;
-        var cb_2 = Math.random()*0.9 + 0.1;
-        var l = Math.floor((Math.random() * win.outerWidth) + 1);
-        var dur = Math.floor((Math.random() * 3) + 1);
-
+    function set_anim_settings(div, l, dur, cb_1, cb_2) {
+        function anim_callback(evt) { this.parentNode.removeChild(this); }
+       
+        var cb_params = [cb_1, cb_2, Math.abs(1-cb_1), cb_2];
         div.style.left = l+'px';
         div.style.webkitAnimationName = 'rain';
         div.style.webkitAnimationDuration = dur+'s';
-        div.style.webkitAnimationTimingFunction = 'cubic-bezier('+cb_1+','+cb_2+','+Math.abs(1-cb_1)+','+cb_2+')';
+        div.style.webkitAnimationTimingFunction = 'cubic-bezier('+cb_params.join(',')+')';
         div.style.webkitAnimationDelay = '0s';
         div.style.webkitAnimationIterationCount = 'infinite';
+        div.addEventListener('webkitAnimationIteration', anim_callback, false);
         return div;
+    }
+
+    function config_animation(div) {
+        var l = Math.floor((Math.random() * win.outerWidth+20) - 20);
+        var dur = Math.random() * 3 + 0.1;
+        var cb_1 = Math.random()*0.9 + 0.1;
+        var cb_2 = Math.random()*0.9 + 0.1;
+        return set_anim_settings(div, l, dur, cb_1, cb_2);
     }
 
     function init() {
         var div = div_gen();
-        div = anim_settings(div);
+        div = config_animation(div);
         doc.body.appendChild(div);
     }
+    return { init: init };
 
-    win['T'] = {
-        'init': init
-    };
-    console.log("whushup");
 }(window, document));
+
+function x() {
+    setInterval(TacoRainGenerator.init, 1);
+    //setInterval(TacoRainGenerator.init, 1);
+    //setInterval(TacoRainGenerator.init, 1);
+}
+setTimeout(x, 500);

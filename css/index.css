@@ -10,7 +10,6 @@
 }
 
 .terker {
-    /*-webkit-animation: rain 2s cubic-bezier(.17,.67,.83,.67) 0s infinite;*/
     width:50px;
     position: absolute;
 }
