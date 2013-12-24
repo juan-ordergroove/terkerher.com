@@ -1,9 +1,15 @@
 TacoRainGenerator = (function(win, doc) {
 
     function div_gen() {
+        var img = doc.createElement('img');
+        img.setAttribute('src', 'https://scontent-a-ord.xx.fbcdn.net/hphotos-ash2/542396_10100455869735192_1696391421_n.jpg');
+        img.setAttribute('width', '130px');
+        img.setAttribute('height', '100px');
+
         var d = doc.createElement('div');
         d.setAttribute('class', 'terker');
-        d.innerHTML = 'testing';
+        d.appendChild(img);
+        //d.innerHTML = 'testing';
         return d;
     }
 
@@ -22,7 +28,7 @@ TacoRainGenerator = (function(win, doc) {
     }
 
     function config_animation(div) {
-        var l = Math.floor((Math.random() * win.outerWidth+20) - 20);
+        var l = Math.floor((Math.random() * win.outerWidth) - 20);
         var dur = Math.random() * 3 + 0.1;
         var cb_1 = Math.random()*0.9 + 0.1;
         var cb_2 = Math.random()*0.9 + 0.1;
@@ -39,8 +45,10 @@ TacoRainGenerator = (function(win, doc) {
 }(window, document));
 
 function x() {
-    setInterval(TacoRainGenerator.init, 1);
-    //setInterval(TacoRainGenerator.init, 1);
-    //setInterval(TacoRainGenerator.init, 1);
+    setInterval(TacoRainGenerator.init, 300);
+    setInterval(TacoRainGenerator.init, 300);
+    setInterval(TacoRainGenerator.init, 300);
+    setInterval(TacoRainGenerator.init, 300);
+    setInterval(TacoRainGenerator.init, 300);
 }
 setTimeout(x, 500);
