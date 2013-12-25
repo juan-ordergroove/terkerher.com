@@ -14,6 +14,13 @@
             iteration_cnt: 'mozAnimationIterationCount',
             iteration_fn: 'mozAnimationIteration'
         };
+    } else if (typeof document.body.style.appleAnimationName !== 'undefined') {
+        css = {
+            name: 'appleAnimationName', duration: 'appleAnimationDuration',
+            timing_fn: 'appleAnimationTimingFunction', delay: 'appleAnimationDelay',
+            iteration_cnt: 'appleAnimationIterationCount',
+            iteration_fn: 'appleAnimationIteration'
+        };
     } else if (typeof document.body.style.oAnimationName !== 'undefined') {
         css = {
             name: 'oAnimationName', duration: 'oAnimationDuration',
