@@ -9,6 +9,17 @@
     }
 }
 
+@keyframes rain {
+    from { 
+        transform: rotate(0deg);
+        top: -100px;
+    }
+    to { 
+        transform: rotate(360deg);
+        top: 100%;
+    }
+}
+
 .terker {
     position: absolute;
 }

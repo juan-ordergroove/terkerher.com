@@ -9,7 +9,6 @@ TacoRainGenerator = (function(win, doc) {
         var d = doc.createElement('div');
         d.setAttribute('class', 'terker');
         d.appendChild(img);
-        //d.innerHTML = 'testing';
         return d;
     }
 
@@ -18,12 +17,12 @@ TacoRainGenerator = (function(win, doc) {
        
         var cb_params = [cb_1, cb_2, Math.abs(1-cb_1), cb_2];
         div.style.left = l+'px';
-        div.style.webkitAnimationName = 'rain';
-        div.style.webkitAnimationDuration = dur+'s';
-        div.style.webkitAnimationTimingFunction = 'cubic-bezier('+cb_params.join(',')+')';
-        div.style.webkitAnimationDelay = '0s';
-        div.style.webkitAnimationIterationCount = 'infinite';
-        div.addEventListener('webkitAnimationIteration', anim_callback, false);
+        div.style[css_support.name] = 'rain';
+        div.style[css_support.duration] = dur+'s';
+        div.style[css_support.timing_fn] = 'cubic-bezier('+cb_params.join(',')+')';
+        div.style[css_support.delay] = '0s';
+        div.style[css_support.iteration_cnt] = 'infinite';
+        div.addEventListener(css_support.iteration_fn, anim_callback, false);
         return div;
     }
 
