@@ -33,7 +33,7 @@
             name: 'animationName', duration: 'animationDuration',
             timing_fn: 'animationTimingFunction', delay: 'animationDelay',
             iteration_cnt: 'animationIterationCount',
-            iteration_fn: 'animationIteration'
+            iteration_fn: 'animationiteration'
         };
     } else { css = undefined; }
     win['css_support'] = css;

@@ -45,9 +45,5 @@ TacoRainGenerator = (function(win, doc) {
 
 function x() {
     setInterval(TacoRainGenerator.init, 300);
-    setInterval(TacoRainGenerator.init, 300);
-    setInterval(TacoRainGenerator.init, 300);
-    setInterval(TacoRainGenerator.init, 300);
-    setInterval(TacoRainGenerator.init, 300);
 }
 setTimeout(x, 500);
