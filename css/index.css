@@ -1,5 +1,52 @@
-.terker { position: fixed; z-index: -1; }
+body { 
+    animation: background_color 10s linear 0s infinite; 
+    -webkit-animation: background_color 10s linear 0s infinite; 
+    -moz-animation: background_color 10s linear 0s infinite; 
+    -apple-animation: background_color 10s linear 0s infinite; 
+    -o-animation: background_color 10s linear 0s infinite; 
+}
 
+@keyframes background_color
+{
+    0%   {background: red;}
+    25%  {background: yellow;}
+    50%  {background: blue;}
+    100% {background: green;}
+}
+
+@-webkit-keyframes background_color
+{
+    0%   {background: red;}
+    25%  {background: yellow;}
+    50%  {background: blue;}
+    100% {background: green;}
+}
+
+@-moz-keyframes background_color
+{
+    0%   {background: red;}
+    25%  {background: yellow;}
+    50%  {background: blue;}
+    100% {background: green;}
+}
+
+@-apple-keyframes background_color
+{
+    0%   {background: red;}
+    25%  {background: yellow;}
+    50%  {background: blue;}
+    100% {background: green;}
+}
+
+@-o-keyframes background_color
+{
+    0%   {background: red;}
+    25%  {background: yellow;}
+    50%  {background: blue;}
+    100% {background: green;}
+}
+
+.terker { position: fixed; z-index: -1; }
 @-webkit-keyframes rain {
     from { -webkit-transform: rotate(0deg); top: 0px; }
     to { -webkit-transform: rotate(360deg); top: 100%; }
