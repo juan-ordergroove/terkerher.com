@@ -1,3 +1,6 @@
+/*
+    From: http://stackoverflow.com/questions/10149963/adding-event-listener-cross-browser
+*/
 eventManager = (function(win, doc) {
     // add event cross browser
     function addEvent(elem, event, fn) {
