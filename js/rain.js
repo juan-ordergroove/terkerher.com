@@ -2,7 +2,7 @@ rainGenerator = (function(win, doc) {
 
     function div_gen() {
         var img = doc.createElement('img');
-        img.setAttribute('src', 'https://scontent-a-ord.xx.fbcdn.net/hphotos-ash2/542396_10100455869735192_1696391421_n.jpg');
+        img.setAttribute('src', 'img/terker.jpg');
         img.setAttribute('width', '130px');
         img.setAttribute('height', '100px');
 
